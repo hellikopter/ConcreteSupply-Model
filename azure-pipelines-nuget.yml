@@ -1,0 +1,25 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: build
+- task: NuGetToolInstaller@1
+  inputs:
+    checkLatest: true
+- task: NuGetCommand@2
+  inputs:
+    command: pack
+    versioningScheme: byPrereleaseNumber
+    packagesToPack: '**/*.csproj'
+    majorVersion: '1'
+    minorVersion: '0'
+    patchVersion: '0'
+    packTimezone: 'utc'
+- task: PublishBuildArtifacts@1
+  inputs:
+      ArtifactName: 'ConcreteSupply-Model'
