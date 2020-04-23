@@ -1,6 +1,6 @@
 ﻿namespace ConcreteSupply.Model
 {
-    public class PostalAddress
+    public class PostalAddress: BaseResource
     {
         public int Id { get; set; }
         public int ContactPointId { get; set; }

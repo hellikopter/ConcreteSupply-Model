@@ -1,6 +1,6 @@
 ﻿namespace ConcreteSupply.Model
 {
-    public class ContactPoint
+    public class ContactPoint: BaseResource
     {
         public int Id { get; set; }
         public string Label { get; set; }
