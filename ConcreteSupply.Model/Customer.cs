@@ -3,6 +3,6 @@
     public class Customer : BaseResource
     {
         public int Id { get; set; }
-        public string ContactPointLabel { get; set; }
+        public string CustomerLabel { get; set; }
     }
 }
